@@ -6,6 +6,37 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+      <body>
+          <div id="Welcome">
+            <h1> Bienvenid@ a Criptocontraseñas </h1>
+              <p> Si estás cansad@ de que  falta de inspiracion te impida crear tus contraseñas con un nivel alto de seguridad<br>
+                Si quieres compartir tus contraseñas con alguien más de una manera segura.<br>
+                Si quieres actualizar las contraseñas actuales de tu correo email.<br>
+                O proteger tus archivos con una contraseña segura y encriptada<br>
+                Da clic aqui.<p/>
+                
+                <button type="button" name="start" onclick="start()">Comenzar</button>
+          </div>
+        <div id="CipherButtons">
+          
+        </div>
+        <div id="Passwords">
+          <span>Introduce tu contraseña para encriptar aqui<br>
+          <input type="text" class= "originalPasword" id="originalPasword"> </input><br>
+          <span>Introduce el número de saltos para tu encriptado<br></span>
+          <input type="text" class = "ofset" id="ofset"></input> <br><br> </span>
+          <button type="button" class= "cipher" id="cipher" onclick="encode()">Cifrar mensaje</button><br><br>
+          <button type="button" class = "dechiper" id="decipher"  onclick="decode()">Descifrar mensaje</button>
+          <p id=errorMessage><p>
+        </div>
+        <div id="NewPassword">
+          <p id="results"></p>
+          <button type="button" id="restart" onclick="restart()">Volver a Pantalla de Inicio</button>
+          <button type="button" id="newTry" onclick="newTry()">cifrar o decifrar otra contraseña</button>
+          <button type="button" id="save" onclick="save()">Guardar contraseñas</button>
+          <button type="button" id="sendEmail" onclick="sendEmail()">Enviarlas por correo electrónico</button>
+          <button type="button" id="download" onclick="download()">Descargar archivo</button>
+        </div>
     <div id="root">
       <h1>Hola mundo!</h1>
     </div>

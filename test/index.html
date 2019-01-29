@@ -6,6 +6,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/4.1.0/mocha.min.css" />
   </head>
   <body>
+    <div id="Welcome">
+      <h1> Bienvenid@ a Criptocontraseñas </h1>
+        <p> Si estás cansad@ de que  falta de inspiracion te impida crear tus contraseñas con un nivel alto de seguridad<br>
+          Si quieres compartir tus contraseñas con alguien más de una manera segura.<br>
+          Si quieres actualizar las contraseñas actuales de tu correo email.<br>
+          O proteger tus archivos con una contraseña segura y encriptada<br>
+          Da clic aqui.<p/>
+          <br><br>
+          <button type="button" name="Start" onclick="buttons()">Comenzar</button>
+    </div>
+  <div id="CipherButtons">
+    
+  </div>
+  <div id="Passwords">
+    <span>Introduce tu contraseña para encriptar aqui<br>
+    <input type="text" class= "big" id="originalPasword"> </input><br>
+    <span>Introduce el número de saltos para tu encriptado<br></span>
+    <input type="text" class = "short" id="Ofset"></input> <br><br><br> </span>
+    <button type="button" class= "cipher" name="Cifrar mensaje" onclick="cipherButton()">Cifrar mensaje</button><br><br>
+    <button type="button" class = "chiper" name="Descifrar mensaje"  onclick="decipherButton()">Descifrar mensaje</button>
+    <p id=errorMessage><p>
+  </div>
+  <div id="NewPassword">
+    <p id="finalParagraph"></p>
+    <button type="button" id="restart" onclick="restart()">Volver a Intentar</button>
+  </div>
     <div id="mocha"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/4.1.0/mocha.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.1.2/chai.min.js"></script>
