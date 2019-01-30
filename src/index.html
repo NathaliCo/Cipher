@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-      <body>
           <div id="Welcome">
             <h1> Bienvenid@ a Criptocontraseñas </h1>
               <p> Si estás cansad@ de que  falta de inspiracion te impida crear tus contraseñas con un nivel alto de seguridad<br>
@@ -14,29 +13,26 @@
                 Si quieres actualizar las contraseñas actuales de tu correo email.<br>
                 O proteger tus archivos con una contraseña segura y encriptada<br>
                 Da clic aqui.</p>
-                
-                <button type="button" name="start" onclick="start()">Comenzar</button>
+                <button type="button" name="start" onclick="cipher.start()">Comenzar</button>
           </div>
-        <div id="CipherButtons">
-          
-        </div>
         <div id="Passwords">
           <label>Introduce tu contraseña para encriptar aqui</label><br>
-          <input type="text" class= "originalPasword" id="originalPasword"> </input><br>
+          <input type="text" class= "originalPasword" id="originalPasword"/> <br>
           <label>Introduce el número de saltos para tu encriptado<br></label>
-          <input type="text" class = "offset" id="offset"></input> <br> 
+          <input type="text" class = "offset" id="offset"/> <br> 
           <label>Dale un nombre o etiqueta a tu contraseña</label><br>
-          <input type="text" class ="sorter" id="sorter"></input><br><br>
-          <button type="button" class= "cipher" id="cipher" onclick="encriptar()">Cifrar mensaje</button><br><br>
-          <button type="button" class = "dechiper" id="decipher"  onclick="desencriptar()">Descifrar mensaje</button>
-          <p id=errorMessage></p>
+          <input type="text" class ="sorter" id="sorter"/><br><br>
+          <button type="button" class= "cipher" id="cipher" onclick="cipher.encriptar()">Cifrar mensaje</button><br><br>
+          <button type="button" class = "dechiper" id="decipher"  onclick="cipher.desencriptar()">Descifrar mensaje</button>
+          <p id="errorMessage"></p>
           <p> Nota: recuerda que la etiqueta de tu contraseña debe ser única, en caso de poner la misma etiqueta a dos contraseñas la segúnda sustituirá a la primera</p>
         </div>
+
         <div id="NewPassword">
           <p id="results"></p>
-          <button type="button" id="restart" onclick="restart()">Volver a Pantalla de Inicio</button>
-          <button type="button" id="newTry" onclick="newTry()">cifrar o decifrar otra contraseña</button>
-          <button type="button" id="save" onclick="save()">Agregar contraseña a mi tabla</button><br><br>
+          <button type="button" id="restart" onclick="cipher.restart()">Volver a Pantalla de Inicio</button>
+          <button type="button" id="newTry" onclick="cipher.newTry()">cifrar o decifrar otra contraseña</button>
+          <button type="button" id="save" onclick="cipher.save()">Agregar contraseña a mi tabla</button><br><br>
           <table id="table">
               <tbody>	
               <tr>Las contraseñas que guardes se irán agregando a aquí abajo, puedes generar tantas contraseñas como quieras</tr>
