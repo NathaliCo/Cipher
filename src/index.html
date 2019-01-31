@@ -13,55 +13,31 @@
                 Si quieres actualizar las contraseñas actuales de tu correo email.<br>
                 O proteger tus archivos con una contraseña segura y encriptada<br>
                 Da clic aqui.</p>
-                <button type="button" name="start" onclick="cipher.start()">Comenzar</button>
+                <button id="start">Comenzar</button>
           </div>
         <div id="Passwords">
           <label>Introduce tu contraseña para encriptar aqui</label><br>
           <input type="text" class= "originalPasword" id="originalPasword"/> <br>
           <label>Introduce el número de saltos para tu encriptado<br></label>
           <input type="text" class = "offset" id="offset"/> <br> 
-          <button type="button" class= "cipher" id="cipher" onclick="cipher.encriptar()">Cifrar mensaje</button><br><br>
-          <button type="button" class = "dechiper" id="decipher"  onclick="cipher.desencriptar()">Descifrar mensaje</button>
+          <button id="cipher">Cifrar mensaje</button><br><br>
+          <button class = "dechiper" id="decipher" >Descifrar mensaje</button>
           <p id="errorMessage"></p>
           <p> Nota: recuerda que la etiqueta de tu contraseña debe ser única, en caso de poner la misma etiqueta a dos contraseñas la segúnda sustituirá a la primera</p>
         </div>
 
         <div id="NewPassword">
           <p id="results"></p>
-          <button type="button" id="restart" onclick="cipher.restart()">Volver a Pantalla de Inicio</button>
-          <button type="button" id="newTry" onclick="cipher.newTry()">cifrar o decifrar otra contraseña</button>
-          <button type="button" id="save" onclick="cipher.save()">Agregar contraseña a mi tabla</button><br><br>
+          <button  id="restart">Volver a Pantalla de Inicio</button>
+          <button  id="newTry" >cifrar o decifrar otra contraseña</button>
+          <button  id="save" >Agregar contraseña a mi tabla</button><br><br>
           <table id="table">
               <tbody>	
               <tr>Las contraseñas que guardes se irán agregando a aquí abajo, puedes generar tantas contraseñas como quieras</tr>
               </tbody>
           </table>
         </div>
-        <script>
-        window.onload= firstWindow();
-
-function firstWindow () {
-  let element= document.getElementById("Passwords");
-  element.style.display = "none";
-  element= document.getElementById("NewPassword");
-  element.style.display = "none";
-}
-
-function results(){
-  cipher.lastWindow();
-  createParagraph();
-  function createParagraph(passwordCipher, offset){
-   offset = parseInt(document.getElementById("offset").value);
-    let password= document.getElementById("originalPasword").value;
-    password= password.toUpperCase();
-     passwordCipher=cipher.encode(offset, password);
-    const paragraph= document.getElementById("results");
-    paragraph.innerHTML=("Tu constraseña es "+ passwordCipher + " con un número de cifrado "+offset);
-  };
- }
  
-
-</script>
     <div id="root">
       <h1>Hola mundo!</h1>
     </div>
@@ -69,3 +45,4 @@ function results(){
     <script src="index.js"></script>
   </body>
 </html>
+
