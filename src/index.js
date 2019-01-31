@@ -42,58 +42,24 @@ function resultsEncode (){
     lastWindow();
     createParagraph();
     function createParagraph(passwordCipher, offset){
-     offset = parseInt(document.getElementById("offset").value);
+      const sorter=document.getElementById("sorter").value;
+      offset = parseInt(document.getElementById("offset").value);
       let password= document.getElementById("originalPasword").value;
       password= password.toUpperCase();
-       passwordCipher=cipher.encode(offset, password);
+      passwordCipher=cipher.encode(offset, password);
       const paragraph= document.getElementById("results");
-      paragraph.innerHTML=("Tu constraseña es "+ passwordCipher + " con un número de cifrado "+offset);
+      paragraph.innerHTML=("Tu constraseña " + sorter + "es "+ passwordCipher + " con un número de cifrado "+offset);
     }
    }
-
-  /* function resultsDecode(){
-    lastWindow();
-    createParagraph();
-    function createParagraph(passwordCipher, offset){
-     offset = parseInt(document.getElementById("offset").value);
-      let password= document.getElementById("originalPasword").value;
-      password= password.toUpperCase();
-       passwordCipher=cipher.decode(offset, password);
-      const paragraph= document.getElementById("results");
-      paragraph.innerHTML=("Tu constraseña es "+ passwordCipher + " con un número de cifrado "+offset);
-    }
-   }
-
-  function desencriptar (){
-    //Variables para guardar los valores ingresados en los inputs
-    let offset = parseInt(document.getElementById("offset").value);
-    let password= document.getElementById("originalPasword").value;
-    password= password.toUpperCase();
-      let passwordCipher = new String();
-      passwordCipher.length = password.length;
-      if (password == ""|| offset =="") {
-        document.getElementById("errorMessage").innerHTML="Llena los dos campos";
-      //Si el offset no es un número
-      }else if (isNaN(offset)){
-        document.getElementById("errorMessage").innerHTML="Ingrese un número de pasos";
-      //si el Offset es un número negativo
-      }else if (offset<0){
-        document.getElementById("errorMessage").innerHTML="Ingresa un número positivo";
-      }else{  
-        cipher.decode(offset, password);
-        resultsDecode();
-      }
-      }
-      document.getElementById("decipher").addEventListener("click", desencriptar);
 
 //limpiar todos los campos
-/*function limpiar (){
+function limpiar (){
     document.getElementById("originalPasword").value = "";
     document.getElementById("offset").value = "";
     document.getElementById("sorter").value = "";
     document.getElementById("errorMessage").innerHTML = "";
   }
-*/
+
 function desencriptar (){
     //Variables para guardar los valores ingresados en los inputs
     let offset = parseInt(document.getElementById("offset").value);
@@ -114,18 +80,19 @@ function desencriptar (){
        resultsDecode();
   }
 }
-document.getElementById("cipher").addEventListener("click", desencriptar);
+document.getElementById("decipher").addEventListener("click", desencriptar);
 
 function resultsDecode (){
     lastWindow();
     createParagraph();
     function createParagraph(passwordCipher, offset){
+        const sorter=document.getElementById("sorter");
      offset = parseInt(document.getElementById("offset").value);
       let password= document.getElementById("originalPasword").value;
       password= password.toUpperCase();
        passwordCipher=cipher.decode(offset, password);
       const paragraph= document.getElementById("results");
-      paragraph.innerHTML=("Tu constraseña es "+ passwordCipher + " con un número de cifrado "+offset);
+      paragraph.innerHTML=("Tu constraseña " + sorter + "es "+ passwordCipher + " con un número de cifrado "+offset);
     }
    }
 
@@ -135,6 +102,7 @@ function restart(){
       zoneOfWork.style.display = "block";
       let element = document.getElementById("NewPassword");
       element.style.display = 'none';
+      limpiar ();
   }  
   document.getElementById("restart").addEventListener("click", restart);
 
@@ -145,6 +113,7 @@ function newTry(){
       element.style.display = 'none';
       document.getElementById("originalPasword").value = "";
     document.getElementById("offset").value = "";
+    limpiar ();
   } 
   document.getElementById("newTry").addEventListener("click", newTry);
 
