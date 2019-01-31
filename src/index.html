@@ -20,8 +20,6 @@
           <input type="text" class= "originalPasword" id="originalPasword"/> <br>
           <label>Introduce el número de saltos para tu encriptado<br></label>
           <input type="text" class = "offset" id="offset"/> <br> 
-          <label>Dale un nombre o etiqueta a tu contraseña</label><br>
-          <input type="text" class ="sorter" id="sorter"/><br><br>
           <button type="button" class= "cipher" id="cipher" onclick="cipher.encriptar()">Cifrar mensaje</button><br><br>
           <button type="button" class = "dechiper" id="decipher"  onclick="cipher.desencriptar()">Descifrar mensaje</button>
           <p id="errorMessage"></p>
@@ -39,6 +37,31 @@
               </tbody>
           </table>
         </div>
+        <script>
+        window.onload= firstWindow();
+
+function firstWindow () {
+  let element= document.getElementById("Passwords");
+  element.style.display = "none";
+  element= document.getElementById("NewPassword");
+  element.style.display = "none";
+}
+
+function results(){
+  cipher.lastWindow();
+  createParagraph();
+  function createParagraph(passwordCipher, offset){
+   offset = parseInt(document.getElementById("offset").value);
+    let password= document.getElementById("originalPasword").value;
+    password= password.toUpperCase();
+     passwordCipher=cipher.encode(offset, password);
+    const paragraph= document.getElementById("results");
+    paragraph.innerHTML=("Tu constraseña es "+ passwordCipher + " con un número de cifrado "+offset);
+  };
+ }
+ 
+
+</script>
     <div id="root">
       <h1>Hola mundo!</h1>
     </div>
