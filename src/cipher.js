@@ -1,34 +1,53 @@
 window.cipher = {
-
+//Método para encriptar
   encode: function(offset, password){
+     //Declaración de variables 
       let code;
+      let cipher;
       let passwordCipher = new String();
       passwordCipher.length = password.length;
-          for (let i=0; i<password.length; i++){
+      //Ciclo para recorrer cada una de las letras de la contraseña
+        for (let i=0; i<password.length; i++){
+      //Ubica el valor de la letra en Unicode
           code=password.charCodeAt(i);
-        if(code < 'A'.charCodeAt(0) || code > 'Z'.charCodeAt(0))
+      //Revisa si es una letra y si es mayúscula
+        if(code >= 'A'.charCodeAt(0) && code <= 'Z'.charCodeAt(0))
         {
-           passwordCipher= passwordCipher+password.charAt(i);
-         }else{
-           let cipher=parseInt((code-65+offset)%26+65);
+          //Realiza la conversión a la letra codificada según el offset
+          cipher=parseInt((code-65+offset)%26+65);
+          //convierte el codigo al alfabeto y va formando la palabra
+          passwordCipher= passwordCipher + String.fromCharCode(cipher);
+          //Revisa si es una letra y si es minúscula
+         }else if (code>= "a".charCodeAt(0) && code <= "z".charCodeAt(0))
+         {
+           //Realiza la conversión a la letra codificada según el offset
+           cipher=parseInt((code-97+offset)%26+97);
+           //convierte el codigo al alfabeto y va formando la palabra
            passwordCipher= passwordCipher + String.fromCharCode(cipher);
+           //Si no es una letra imprime el signo o número tal cual lo escribió el usuario
+    }else{
+      passwordCipher= passwordCipher+password.charAt(i);
     }
   }return passwordCipher;
   },
 
   decode: function(offset, password){
-      let code;
-      let passwordCipher = new String();
+    let cipher;  
+    let code;
+    let passwordCipher = new String();
       passwordCipher.length = password.length;
           for (let i=0; i<password.length; i++){
           code=password.charCodeAt(i);
-         
-        if(code < 'A'.charCodeAt(0) || code > 'Z'.charCodeAt(0))
-        {
-           passwordCipher= passwordCipher+password.charAt(i);
-         }else{
-           let cipher=parseInt((code-13-offset)%26+65);
-           passwordCipher= passwordCipher + String.fromCharCode(cipher);
+          if(code >= 'A'.charCodeAt(0) && code <= 'Z'.charCodeAt(0))
+          {
+             cipher=parseInt((code+65-offset)%26+65);
+            passwordCipher= passwordCipher + String.fromCharCode(cipher);
+           }else if (code >= "a".charCodeAt(0) && code <= "z".charCodeAt(0))
+           {
+             cipher=parseInt((code-45-offset)%26+97);
+             passwordCipher= passwordCipher + String.fromCharCode(cipher);
+    }else {
+       passwordCipher= passwordCipher+password.charAt(i);
     }
   }return passwordCipher;
   }

@@ -6,43 +6,49 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-          <div id="Welcome">
+      <nav>
+          <button id="welcomePage" class="nav">Inicio</button>
+          <button type="button" class="nav">Contacto</button>
+          <button type="button" class="nav">Nosotros</button>
+      </nav>
             <h1> Bienvenid@ a Criptocontraseñas </h1>
-              <p> Si estás cansad@ de que  falta de inspiracion te impida crear tus contraseñas con un nivel alto de seguridad<br>
-                Si quieres compartir tus contraseñas con alguien más de una manera segura.<br>
-                Si quieres actualizar las contraseñas actuales de tu correo email.<br>
-                O proteger tus archivos con una contraseña segura y encriptada<br>
-                Da clic aqui.</p>
+            <div id="Welcome">
+              <p> Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
                 <button id="start">Comenzar</button>
           </div>
         <div id="Passwords">
           <label>Introduce tu contraseña para encriptar aqui</label><br>
-          <input type="text" class= "originalPasword" id="originalPasword"/> <br>
-          <label>Introduce el número de saltos para tu encriptado<br></label>
-          <input type="text" class = "offset" id="offset"/> <br> 
+          <input type="text" class= "originalPasword" id="originalPasword" placeholder="Contraseña"/> <br>
+          <label>Introduce el número de saltos para tu encriptado/desencriptado<br></label>
+          <input type="text" class = "offset" id="offset" placeholder="Solo números"/> <br> 
           <label>Introduce un nombre o etiqueta para tu contraseña(opcional)<br></label>
-          <input type="text" id="sorter"/> <br> <br> 
+          <input type="text" id="sorter" placeholder="Etiqueta"/> <br> <br> 
           <button id="cipher">Cifrar mensaje</button><br><br>
           <button class = "dechiper" id="decipher" >Descifrar mensaje</button>
           <p id="errorMessage"></p>
-          <p> Nota: recuerda que la etiqueta de tu contraseña debe ser única, en caso de poner la misma etiqueta a dos contraseñas la segúnda sustituirá a la primera</p>
         </div>
 
         <div id="NewPassword">
           <p id="results"></p>
-          <button  id="restart">Volver a Pantalla de Inicio</button>
           <button  id="newTry" >cifrar o decifrar otra contraseña</button>
           <button  id="save" >Agregar contraseña a mi tabla</button><br><br>
-          <table id="table">
-              <tbody>	
-              <tr>Las contraseñas que guardes se irán agregando a aquí abajo, puedes generar tantas contraseñas como quieras</tr>
-              </tbody>
-          </table>
+          <h3>Las contraseñas que guardes se irán agregando a aquí abajo, puedes generar tantas contraseñas como quieras</h3>
+          <br>
+           <table id="table">
+              <thead>
+                Tabla de contraseñas encriptadas
+                </thead>
+              <tbody>
+                </tbody>
+              </table>
+              <button  id="cleanAll" >Limpiar tabla</button>
+              <button  id="cleanLast" >Limpiar último elemento agregado</button>
+          
+          
+          
         </div>
- 
-    <div id="root">
-      <h1>Hola mundo!</h1>
-    </div>
+        <footer class="contacto">¿Tienes alguna sugerencia? click <a href="#"> AQUÍ!!</a>
+        </footer>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
