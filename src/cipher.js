@@ -11,7 +11,7 @@ window.cipher = {
       //Ubica el valor de la letra en Unicode
           code=password.charCodeAt(i);
       //Revisa si es una letra y si es mayúscula
-        if(code >= 'A'.charCodeAt(0) && code <= 'Z'.charCodeAt(0))
+        if(code >= "A".charCodeAt(0) && code <= "Z".charCodeAt(0))
         {
           //Realiza la conversión a la letra codificada según el offset
           cipher=parseInt((code-65+offset)%26+65);
@@ -38,7 +38,7 @@ window.cipher = {
       passwordCipher.length = password.length;
           for (let i=0; i<password.length; i++){
           code=password.charCodeAt(i);
-          if(code >= 'A'.charCodeAt(0) && code <= 'Z'.charCodeAt(0))
+          if(code >= "A".charCodeAt(0) && code <= "Z".charCodeAt(0))
           {
              cipher=parseInt((code+65-offset)%26+65);
             passwordCipher= passwordCipher + String.fromCharCode(cipher);

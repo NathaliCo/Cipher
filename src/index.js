@@ -1,29 +1,21 @@
 
 //Variables para declarar que div va a ser visual y cual no
 let zoneOfWork;
-let element= document.getElementById("Passwords");
+let element= document.getElementById("passwords");
 element.style.display = "none";
-element= document.getElementById("NewPassword");
+element= document.getElementById("newPassword");
 element.style.display = "none";
 
 //función del botón comenzar
 function start (){
     //Desaparece la pantalla de bienvenida y llama a la pantalla del formulario
-    element=document.getElementById("Welcome");
-    element.style.display = 'none';
-    zoneOfWork=document.getElementById('Passwords');
+    element=document.getElementById("welcome");
+    element.style.display = "none";
+    zoneOfWork=document.getElementById('passwords');
     zoneOfWork.style.display = "block";
 }
 document.getElementById("start").addEventListener("click", start);
 
-/*
-function handleKEyPress(e){
-  var startButton=document.getElementById("Welcome");
-  if (e.keyCode===13){
-    start();
-    return false;
-  }
-}*/
 //verifica que el usuario ingrese la información necesaria, manda llamar al método encode cambia de pantalla e imprime un parrafo con la contraseña encriptada
 function encriptar (){
     //Variables para guardar los valores ingresados en los inputs
@@ -33,17 +25,19 @@ function encriptar (){
       let passwordCipher = new String();
       passwordCipher.length = password.length;
       //Si el offset o la contraseña estan vacios
-      if (password == ""|| offset =="") {
-        document.getElementById("errorMessage").innerHTML="Llena los dos campos";
+      if (password == "") {
+        document.getElementById("errorMessage").innerHTML="Ingresa una contraseña";
       //Si el offset no es un número
-      }else if (isNaN(offset)){
-         document.getElementById("errorMessage").innerHTML="Ingrese un número de pasos";
+     }else if (offset==""){
+         document.getElementById("errorMessage").innerHTML="Ingrese un número de saltos";
       //si el Offset es un número negativo
       }else if (offset<0){
         document.getElementById("errorMessage").innerHTML="Ingresa un número positivo";
       //Si pasa los filtros, se manda llamar al método cipher, se activa el siguiente div y se imprime un párrafo
       }else{  
+        //llama al método encode
         cipher.encode(offset, password);
+      //llama a la función resultados
        resultsEncode();
   }
 }
@@ -61,9 +55,9 @@ function resultsEncode (){
 
    // Función para activar la última pantalla
   function lastWindow(){
-    element = document.getElementById("Passwords");
-    element.style.display = 'none';
-    zoneOfWork=document.getElementById("NewPassword");
+    element = document.getElementById("passwords");
+    element.style.display = "none";
+    zoneOfWork=document.getElementById("newPassword");
     zoneOfWork.style.display = "block";
     }
 
@@ -81,7 +75,7 @@ function resultsEncode (){
     return paragraphEn;
   }
 
-  //función para ir agragando las contraseñas encriptadas a la tabla
+  //función para ir agregando las contraseñas encriptadas a la tabla
   function save(){
     //Guarda el return de createParagraphEncode en la constante text
     const text= createParagraphEncode();
@@ -92,6 +86,21 @@ function resultsEncode (){
     document.getElementById("table").appendChild(savePasswords);
   }
   document.getElementById("save").addEventListener("click", save);
+
+    //Función para limpiar la tabla y volver a la pantalla principal
+ function cleanTable(){
+  location.reload();
+}
+document.getElementById("cleanAll").addEventListener("click", cleanTable);
+
+//Función para borrar la última contraseña guardada
+function cleanLast(){
+ const lastRow = document.getElementById ("table");
+ lastRow.removeChild(lastRow.lastChild);
+ }
+
+document.getElementById("cleanLast").addEventListener("click",cleanLast);
+
 
 //limpiar todos los campos
 function limpiar (){
@@ -107,12 +116,11 @@ function desencriptar (){
     const password= document.getElementById("originalPasword").value;
       let passwordCipher = new String();
       passwordCipher.length = password.length; 
-      if (password == ""|| offset =="") {
-        document.getElementById("errorMessage").innerHTML="Llena los dos campos";
+      if (password == "") {
+        document.getElementById("errorMessage").innerHTML="Ingresa una contraseña";
       //Si el offset no es un número
-      }else if (isNaN(offset)){
-         document.getElementById("errorMessage").innerHTML="Ingrese un número de pasos";
-      //si el Offset es un número negativo
+     }else if (offset==""){
+         document.getElementById("errorMessage").innerHTML="Ingrese un número de saltos";
       }else if (offset<0){
         document.getElementById("errorMessage").innerHTML="Ingresa un número positivo";
       }else{  
@@ -143,36 +151,23 @@ function resultsDecode (){
 
   //Función para ir a la primera pantalla
 function restart(){
-    zoneOfWork=document.getElementById("Welcome");
+    zoneOfWork=document.getElementById("welcome");
     zoneOfWork.style.display = "block";
-    element = document.getElementById("NewPassword");
-    element.style.display = 'none';
+    element = document.getElementById("newPassword");
+    element.style.display = "none";
     limpiar ();
   }  
   document.getElementById("welcomePage").addEventListener("click", restart);
 
   //Función para encriptar o desecriptar otra contraseña
 function newTry(){
-    zoneOfWork=document.getElementById("Passwords");
+    zoneOfWork=document.getElementById("passwords");
     zoneOfWork.style.display = "block";
-    element = document.getElementById("NewPassword");
-    element.style.display = 'none';
+    element = document.getElementById("newPassword");
+    element.style.display = "none";
     document.getElementById("originalPasword").value = "";
     document.getElementById("offset").value = "";
     limpiar ();
   } 
   document.getElementById("newTry").addEventListener("click", newTry);
   
-  //Función para limpiar la tabla y volver a la pantalla principal
- function cleanTable(){
-   location.reload();
- }
- document.getElementById("cleanAll").addEventListener("click", cleanTable);
-
- //Función para borrar la última contraseña guardada
- function cleanLast(){
-  const lastRow = document.getElementById ("table");
-  lastRow.removeChild(lastRow.lastChild);
-  }
- 
- document.getElementById("cleanLast").addEventListener("click",cleanLast);
