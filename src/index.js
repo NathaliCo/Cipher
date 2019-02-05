@@ -17,7 +17,7 @@ function start (){
 document.getElementById("start").addEventListener("click", start);
 
 //verifica que el usuario ingrese la información necesaria, manda llamar al método encode cambia de pantalla e imprime un parrafo con la contraseña encriptada
-function encriptar (){
+function cipherButton (){
     //Variables para guardar los valores ingresados en los inputs
     const offset = parseInt(document.getElementById("offset").value);
     const password= document.getElementById("originalPasword").value;
@@ -41,8 +41,9 @@ function encriptar (){
        resultsEncode();
   }
 }
-  document.getElementById("cipher").addEventListener("click", encriptar);
- 
+  document.getElementById("cipher").addEventListener("click", cipherButton);
+//Función para verificar
+
 //Función para mostrar los resultados de la función encriptar, activa el boton de guardar contraseña para agragarla a la tabla
 function resultsEncode (){
   zoneOfWork=document.getElementById("save");
@@ -53,15 +54,7 @@ function resultsEncode (){
     createParagraphEncode();
    }
 
-   // Función para activar la última pantalla
-  function lastWindow(){
-    element = document.getElementById("passwords");
-    element.style.display = "none";
-    zoneOfWork=document.getElementById("newPassword");
-    zoneOfWork.style.display = "block";
-    }
-
-//Función para crear el parrafo resultado de encriptar la contraseña
+   //Función para crear el parrafo resultado de encriptar la contraseña
    function createParagraphEncode(passwordCipher, offset){
     //Variables para obtener los valores de los inputs
     const sorter=document.getElementById("sorter").value;
@@ -74,6 +67,14 @@ function resultsEncode (){
     paragraph.innerHTML=(paragraphEn);
     return paragraphEn;
   }
+
+   // Función para activar la última pantalla
+  function lastWindow(){
+    element = document.getElementById("passwords");
+    element.style.display = "none";
+    zoneOfWork=document.getElementById("newPassword");
+    zoneOfWork.style.display = "block";
+    }
 
   //función para ir agregando las contraseñas encriptadas a la tabla
   function save(){
@@ -91,7 +92,7 @@ function resultsEncode (){
  function cleanTable(){
   location.reload();
 }
-document.getElementById("cleanAll").addEventListener("click", cleanTable);
+document.getElementById("cleanTable").addEventListener("click", cleanTable);
 
 //Función para borrar la última contraseña guardada
 function cleanLast(){
@@ -103,14 +104,14 @@ document.getElementById("cleanLast").addEventListener("click",cleanLast);
 
 
 //limpiar todos los campos
-function limpiar (){
+function clean (){
     document.getElementById("originalPasword").value = "";
     document.getElementById("offset").value = "";
     document.getElementById("sorter").value = "";
     document.getElementById("errorMessage").innerHTML = "";
   }
 
-function desencriptar (){
+function decipherButton (){
     //Variables para guardar los valores ingresados en los inputs
     const offset = parseInt(document.getElementById("offset").value);
     const password= document.getElementById("originalPasword").value;
@@ -128,7 +129,7 @@ function desencriptar (){
        resultsDecode();
   }
 }
-document.getElementById("decipher").addEventListener("click", desencriptar);
+document.getElementById("decipher").addEventListener("click", decipherButton);
 
 function resultsDecode (){
     lastWindow();
@@ -155,7 +156,7 @@ function restart(){
     zoneOfWork.style.display = "block";
     element = document.getElementById("newPassword");
     element.style.display = "none";
-    limpiar ();
+    clean ();
   }  
   document.getElementById("welcomePage").addEventListener("click", restart);
 
@@ -167,7 +168,7 @@ function newTry(){
     element.style.display = "none";
     document.getElementById("originalPasword").value = "";
     document.getElementById("offset").value = "";
-    limpiar ();
+    clean ();
   } 
   document.getElementById("newTry").addEventListener("click", newTry);
   
