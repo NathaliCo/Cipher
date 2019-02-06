@@ -9,7 +9,7 @@
 
 * Adicionalmente a esas 3 pantallas principales, agregue ancladas a la barra de navegación dos más, una que permite al usuario mandar sugerencias y otra que da una breve explicación sobre el funcionamiento de la web app.
 
-# ¿Quiénes son los principales usuarios de producto?
+## ¿Quiénes son los principales usuarios de producto?
 * El usuario para el que la app web está diseñada es cualquier persona que haga uso de contraseñas para proteger sus cuentas en línea o sus archivos locales. 
 
 # Objetivos
@@ -19,7 +19,7 @@
 * Facilitar la creación de contraseñas.
 * Permitir al usuario compartir sus contraseñas con otras personas de forma segura.
 
-# ¿Cómo crees que el producto que estás creando está resolviendo sus problemas?
+## ¿Cómo crees que el producto que estás creando está resolviendo sus problemas?
 
 * El fin principal del producto es mejorar la seguridad de las contraseñas sin forzar al usuario a crear contraseñas nuevas cada vez, ya que podría crear una con diferentes offset y usarla en diferentes cuentas, además de aumentar el grado de complejidad de las mismas.
 
@@ -27,7 +27,7 @@
 
 *El objetivo secundario es permitir que se puedan compartir sus contraseñas con otras personas de una manera más segura, sin que terceros que llegasen a verlas pudieran acceder a sus cuentas o archivos.
 
-#Funcionalidad
+# Funcionalidad
 
 ## Funcionalidad y diseño de pantallas
 
