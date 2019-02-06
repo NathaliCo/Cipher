@@ -5,21 +5,29 @@ let element= document.getElementById("passwords");
 element.style.display = "none";
 element= document.getElementById("newPassword");
 element.style.display = "none";
+element=document.getElementById("description");
+element.style.display = "none";
+element=document.getElementById("contact");
+element.style.display="none";
 
 //función del botón comenzar
 function start (){
     //Desaparece la pantalla de bienvenida y llama a la pantalla del formulario
-    element=document.getElementById("welcome");
-    element.style.display = "none";
     zoneOfWork=document.getElementById('passwords');
     zoneOfWork.style.display = "block";
-}
+    element=document.getElementById("welcome");
+    element.style.display = "none";
+    element=document.getElementById("description");
+    element.style.display = "none";
+    element=document.getElementById("contact");
+    element.style.display="none";
+    }
 document.getElementById("start").addEventListener("click", start);
 
 //verifica que el usuario ingrese la información necesaria, manda llamar al método encode cambia de pantalla e imprime un parrafo con la contraseña encriptada
 function cipherButton (){
     //Variables para guardar los valores ingresados en los inputs
-    const offset = parseInt(document.getElementById("offset").value);
+    let offset = parseInt(document.getElementById("offset").value);
     const password= document.getElementById("originalPasword").value;
     //Le da un tamaño fijo a la variable passwordChiper, el tamaño depende de el número de carácteres de pasword
       let passwordCipher = new String();
@@ -32,8 +40,8 @@ function cipherButton (){
          document.getElementById("errorMessage").innerHTML="Ingrese un número de saltos";
       //si el Offset es un número negativo
       }else if (offset<0){
-        document.getElementById("errorMessage").innerHTML="Ingresa un número positivo";
-      //Si pasa los filtros, se manda llamar al método cipher, se activa el siguiente div y se imprime un párrafo
+        document.getElementById("errorMessage").innerHTML="Ingrese un número positivo";
+      //Si pasa los filtros, se manda llamar al método cipher, se activa el siguiente div y se imprime un párrafo*/
       }else{  
         //llama al método encode
         cipher.encode(offset, password);
@@ -48,6 +56,8 @@ function cipherButton (){
 function resultsEncode (){
   zoneOfWork=document.getElementById("save");
   zoneOfWork.style.display="inline";
+   zoneOfWork=document.getElementById("table");
+  zoneOfWork.style.display="table";
   //Llama a la función para activar el siguiente div 
     lastWindow();
   //llama a la función de crear párrafo y mostrarlo en la última pantalla
@@ -84,7 +94,7 @@ function resultsEncode (){
     const savePasswords  = document.createElement('tr');
     const paragraph=document.createTextNode(text);
     savePasswords.appendChild(paragraph);
-    document.getElementById("table").appendChild(savePasswords);
+    document.getElementById("savedPasswords").appendChild(savePasswords);
   }
   document.getElementById("save").addEventListener("click", save);
 
@@ -123,7 +133,7 @@ function decipherButton (){
      }else if (offset==""){
          document.getElementById("errorMessage").innerHTML="Ingrese un número de saltos";
       }else if (offset<0){
-        document.getElementById("errorMessage").innerHTML="Ingresa un número positivo";
+        document.getElementById("errorMessage").innerHTML="Ingrese un número positivo";
       }else{  
         cipher.decode(offset, password);
        resultsDecode();
@@ -134,6 +144,8 @@ document.getElementById("decipher").addEventListener("click", decipherButton);
 function resultsDecode (){
     lastWindow();
     //Esconde el botón de guardar
+    element=document.getElementById("table");
+    element.style.display= "none";
     element= document.getElementById("save");
     element.style.display="none";
     createParagraphDecode ();
@@ -156,6 +168,10 @@ function restart(){
     zoneOfWork.style.display = "block";
     element = document.getElementById("newPassword");
     element.style.display = "none";
+    element=document.getElementById("description");
+    element.style.display = "none";
+    element=document.getElementById("contact");
+    element.style.display="none";
     clean ();
   }  
   document.getElementById("welcomePage").addEventListener("click", restart);
@@ -172,3 +188,30 @@ function newTry(){
   } 
   document.getElementById("newTry").addEventListener("click", newTry);
   
+function description(){
+  zoneOfWork=document.getElementById("description");
+  zoneOfWork.style.display = "block";
+  element= document.getElementById("passwords");
+  element.style.display = "none";
+  element= document.getElementById("newPassword");
+  element.style.display = "none";
+  element=document.getElementById("welcome");
+  element.style.display= "none";
+  element=document.getElementById("contact");
+  element.style.display= "none";
+}
+document.getElementById("about").addEventListener("click", description);
+
+function contact(){
+  zoneOfWork=document.getElementById("contact");
+  zoneOfWork.style.display = "block";
+  element= document.getElementById("passwords");
+  element.style.display = "none";
+  element= document.getElementById("newPassword");
+  element.style.display = "none";
+  element=document.getElementById("welcome");
+  element.style.display= "none";
+  element=document.getElementById("description");
+  element.style.display= "none";
+}
+document.getElementById("email").addEventListener("click", contact);
