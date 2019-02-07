@@ -1,4 +1,3 @@
-
 //Variables para declarar que div va a ser visual y cual no
 let zoneOfWork;
 let element= document.getElementById("passwords");
