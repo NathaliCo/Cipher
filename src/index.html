@@ -27,7 +27,7 @@
           <label>Introduce tu contraseña</label><br>
             <input type="text" class= "originalPasword" id="originalPasword" placeholder="Contraseña" autofocus/> <br>
           <label>Introduce el número de saltos para tu encriptado/desencriptado<br></label>
-            <input type="number" class = "offset" id="offset" placeholder="Solo números" /> <br> 
+            <input class = "offset" id="offset" placeholder="Solo números"/> <br> 
           <label>Introduce un nombre o etiqueta para tu contraseña(opcional)<br></label>
             <input type="text" id="sorter" placeholder="Etiqueta"/> <br> <br> 
           <button id="cipher">Encriptar contraseña</button><br><br>
@@ -36,7 +36,7 @@
         </div>
         <div id="newPassword">
           <p id="results"></p>
-          <button  id="newTry" >cifrar o decifrar otra contraseña</button>
+          <button  id="newTry" >encriptar o desencriptar otra contraseña</button>
           <button  id="save" >Agregar contraseña a mi tabla</button><br><br>
   
           <br>
@@ -47,8 +47,8 @@
                 <tr><em>Contraseñas encriptadas</em></tr>
               </tbody>
               </table>
-              <a href="mailto:tucorreo@dominio.com">Enviar por email</a>
-            <button  id="cleanTable" >Limpiar tabla</button>
+              <a href="mailto:tucorreo@dominio.com">Enviar por email</a><br>
+            <button  id="cleanTable" >Limpiar tabla y volver al inicio</button>
             <button  id="cleanLast" >Limpiar último elemento agregado</button>
           </div>
           </div>
@@ -56,7 +56,7 @@
             Esta web app está hecha para facilitarte la creación rápida de contraseñas que podrás usar en cualquier plataforma.
             Las contraseñas tendrán el grado de seguridad que tu desees y aunque ingreses un texto simple, al encriptarla te 
             devolverá un texto complejo y difícil de hackear.  
-            Para el cifrado de las contraseñas se utiliza el cifrado César, que consiste en la 
+            Para el encriptado de las contraseñas se utiliza el cifrado César, que consiste en la 
             sustitución de una letra por otra a partir de número fijo (número de saltos) que dicta el número de posiciones 
             más adelante en el alfabeto que se recorrerá el valor de la letra.  
           </div>

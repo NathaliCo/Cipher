@@ -26,16 +26,17 @@ document.getElementById("start").addEventListener("click", start);
 //verifica que el usuario ingrese la información necesaria, manda llamar al método encode cambia de pantalla e imprime un parrafo con la contraseña encriptada
 function cipherButton (){
     //Variables para guardar los valores ingresados en los inputs
-    let offset = parseInt(document.getElementById("offset").value);
+    const offset = parseInt(document.getElementById("offset").value);
+    console.log (offset);
     const password= document.getElementById("originalPasword").value;
     //Le da un tamaño fijo a la variable passwordChiper, el tamaño depende de el número de carácteres de pasword
       let passwordCipher = new String();
       passwordCipher.length = password.length;
       //Si el offset o la contraseña estan vacios
-      if (password == "") {
+      if (password == "" ) {
         document.getElementById("errorMessage").innerHTML="Ingresa una contraseña";
       //Si el offset no es un número
-     }else if (offset==""){
+     }else if (isNaN(offset)){
          document.getElementById("errorMessage").innerHTML="Ingrese un número de saltos";
       //si el Offset es un número negativo
       }else if (offset<0){
@@ -105,10 +106,9 @@ document.getElementById("cleanTable").addEventListener("click", cleanTable);
 
 //Función para borrar la última contraseña guardada
 function cleanLast(){
- const lastRow = document.getElementById ("table");
+ const lastRow = document.getElementById ("savedPasswords");
  lastRow.removeChild(lastRow.lastChild);
  }
-
 document.getElementById("cleanLast").addEventListener("click",cleanLast);
 
 
@@ -129,7 +129,7 @@ function decipherButton (){
       if (password == "") {
         document.getElementById("errorMessage").innerHTML="Ingresa una contraseña";
       //Si el offset no es un número
-     }else if (offset==""){
+     }else if (isNaN(offset)){
          document.getElementById("errorMessage").innerHTML="Ingrese un número de saltos";
       }else if (offset<0){
         document.getElementById("errorMessage").innerHTML="Ingrese un número positivo";
