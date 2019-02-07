@@ -112,7 +112,6 @@ function cleanLast(){
 
 document.getElementById("cleanLast").addEventListener("click",cleanLast);
 
-
 //limpiar todos los campos
 function clean (){
     document.getElementById("originalPasword").value = "";
