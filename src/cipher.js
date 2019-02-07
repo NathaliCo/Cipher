@@ -52,7 +52,7 @@ window.cipher = {
              }else if (code >= "a".charCodeAt(0) && code <= "z".charCodeAt(0))
              {
                 //Realiza la conversión a la letra codificada según el offset
-               cipher=parseInt((code+97+26+offset)%26+97);
+               cipher=parseInt((code-45-offset)%26+97);
                //convierte el codigo al alfabeto y va formando la palabra
                passwordCipher= passwordCipher + String.fromCharCode(cipher);
       }else {
