@@ -11,18 +11,17 @@ h1 {
     background: #1E3747;
     text-align: center;
     text-shadow: 4px 4px 6px black;
-  
   }
+
   nav{
     position: relative;
     width: 100%;
     background-color: black;
     display: flex;
     justify-content: space-around;
-  
   }
   
-.nav{
+.buttonNav{
     text-decoration: none;
     display: inline-block;
     font-family: monospace;
@@ -30,17 +29,21 @@ h1 {
     font-size: 1rem;
     background-color: black;
     border-color: black;
-  box-shadow: none !important;
+    box-shadow: none ;
   }
+
 body{
-    background:  #D9E2E7;
+  overflow-x: hidden;
+  background:  #D9E2E7;
 }
+
 div{
 padding-top: 5%;
 text-align: center;
 font-size: 1.5rem;
 padding-bottom: 80px;
 }
+
 footer{
     background: #304F63;
     padding: 1%;
@@ -48,6 +51,9 @@ footer{
     font-size: .7rem;
     text-align: center;
     width: 100%;
+    position:fixed;
+    bottom:0px;
+    
   }
   button{
     text-decoration: none;
@@ -62,11 +68,12 @@ footer{
     cursor: pointer;
     box-shadow: 10px 10px 25px dimgray;
   }
+
   button:hover{
     opacity: unset;
   }
+
 table{
   display: block;
   border-style: solid;
 }
-
