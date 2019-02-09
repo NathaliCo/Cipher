@@ -93,7 +93,7 @@ document.getElementById("cleanTable").addEventListener("click", cleanTable);
 
 //Función para borrar la última contraseña guardada
 function cleanLast(){
- const lastRow = document.getElementById ("table");
+ const lastRow = document.getElementById ("savedPasswords");
  lastRow.removeChild(lastRow.lastChild);
  }
 
