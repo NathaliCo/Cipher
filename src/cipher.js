@@ -25,6 +25,8 @@ window.cipher = {
              //convierte el codigo al alfabeto y va formando la palabra
              passwordCipher= passwordCipher + String.fromCharCode(cipher);
              //Si no es una letra imprime el signo o número tal cual lo escribió el usuario
+      }else if (code==32){
+        passwordCipher=passwordCipher+"";
       }else{
         passwordCipher= passwordCipher+password.charAt(i);
       }
@@ -55,7 +57,9 @@ window.cipher = {
                cipher=parseInt((code-45-offset)%26+97);
                //convierte el codigo al alfabeto y va formando la palabra
                passwordCipher= passwordCipher + String.fromCharCode(cipher);
-      }else {
+      }else if (code==32){
+        passwordCipher = passwordCipher + "";
+      }else{
          //Si no es una letra imprime el signo o número tal cual lo escribió el usuario
          passwordCipher= passwordCipher+password.charAt(i);
       }

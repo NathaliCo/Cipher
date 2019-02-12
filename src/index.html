@@ -9,25 +9,26 @@
   <body>
       <h1> Bienvenid@ a Criptocontraseñas </h1>
       <nav>
-          <button id="welcomePage" class="nav">Inicio</button>
-          <button id="email" class="nav">Contacto</button>
-          <button id="about" class="nav">Acerca de</button>
+          <button id="welcomePage" class="buttonNav">Inicio</button>
+          <button id="email" class="buttonNav">Contacto</button>
+          <button id="about" class="buttonNav">Acerca de</button>
       </nav>
             <div id="welcome">
-              <strong> Aquí podrás codificar tus contraseñas dándoles un grado de seguridad mayor<br>
-              para mantener tus cuentas online y tus archivos mejor protegidos.</strong><br><br>
-              1.-Introduce tu contraseña<br>2.-Escribe un número de saltos<br>
-              3.-Opcionalmente puedes agregar una etiqueta para distinguir tu contraseña encriptada<br>
-              4.-Da clic en el botón que describe lo que quieres hacer<br>
-              5.-Adicionalmente puedes agregar tus contraseñas a una tabla, para más adelante poder guardarlas.<br> 
-              Nota: Puedes agregar tantas contraseñas como quieras.</p>
+              <p> <strong>Aqui podrás codificar tus contraseñas dándoles un grado de seguridad mayor<br>
+                para mantener tus cuentas online y tus archivos mejor protegidos.</strong><br><br>
+                1.-Introduce tu contraseña<br>2.-Escribe un número de saltos<br>
+                3.-Opcionalmente puedes agregar una etiqueta para distinguir tu contraseña encriptada<br>
+                4.-Da click en el botón que describe lo que quieres hacer<br>
+                5.-Adicionalmente puedes agregar tus contraseñas a una tabla, para más adelante poder guardarlas.<br> 
+                Nota: Puedes agregar tantas contraseñas como quieras.</p>
                 <button id="start">Comenzar</button>
           </div>
         <div id="passwords">
-          <label>Introduce tu contraseña</label><br>
+          <label>Introduce tu contraseña, sin espacios </label><span id="questionMark" title="En caso de introducir espacios, estos serán eliminados automáticamente">  ? </span><br>
+
             <input type="text" class= "originalPasword" id="originalPasword" placeholder="Contraseña" autofocus/> <br>
           <label>Introduce el número de saltos para tu encriptado/desencriptado<br></label>
-            <input type="number" class = "offset" id="offset" placeholder="Solo números" /> <br> 
+            <input class = "offset" id="offset" placeholder="Solo números"/> <br> 
           <label>Introduce un nombre o etiqueta para tu contraseña(opcional)<br></label>
             <input type="text" id="sorter" placeholder="Etiqueta"/> <br> <br> 
           <button id="cipher">Encriptar contraseña</button><br><br>
@@ -36,28 +37,27 @@
         </div>
         <div id="newPassword">
           <p id="results"></p>
-          <button  id="newTry" >Encriptar o desencriptar otra contraseña</button>
-          <button  id="save">Agregar contraseña a mi tabla</button><br><br>
-          <br>
+          <button  id="newTry" >encriptar o desencriptar otra contraseña</button>
+          <button  id="save" >Agregar contraseña a mi tabla</button><br><br><br>
           <div id="table">
               <span>Las contraseñas que guardes se irán agregando a aquí abajo, puedes generar tantas contraseñas como quieras</span><br>
-           <table id="savedPasswords"> 
-              <tbody>  
-                <tr>
-                  <th><em>Contraseñas encriptadas</em></th>
-                </tr>
+           <table id="savedPasswords">  
+            <tbody> 
+              <tr>
+                <th>Contraseñas encriptadas</th> 
+              </tr>
               </tbody>
               </table>
-              <a href="mailto:tucorreo@dominio.com"><br>Enviar por email</a>
-            <button  id="cleanTable" >Limpiar tabla</button>
+              <a href="mailto:tucorreo@dominio.com">Enviar por email</a><br>
+            <button  id="cleanTable" >Limpiar tabla y volver al inicio</button>
             <button  id="cleanLast" >Limpiar último elemento agregado</button>
           </div>
-          </div>
+        </div>
           <div id = "description">¿Qué es y que hace CriptoContraseñas?<br>
             Esta web app está hecha para facilitarte la creación rápida de contraseñas que podrás usar en cualquier plataforma.
             Las contraseñas tendrán el grado de seguridad que tu desees y aunque ingreses un texto simple, al encriptarla te 
             devolverá un texto complejo y difícil de hackear.  
-            Para el cifrado de las contraseñas se utiliza el cifrado César, que consiste en la 
+            Para el encriptado de las contraseñas se utiliza el cifrado César, que consiste en la 
             sustitución de una letra por otra a partir de número fijo (número de saltos) que dicta el número de posiciones 
             más adelante en el alfabeto que se recorrerá el valor de la letra.  
           </div>
@@ -67,7 +67,7 @@
                 <label>Nombre:<br>
                   <input id="nombre" name="Nombre" type="text"><br>
                 </label>
-                <label>Comentarios y sugerencias<br>
+                <label>Comentarios y/o Sugerencias:<br>
                   <textarea name="comentarios" rows="4" cols="36"> 
                   </textarea>
                 </label>
@@ -78,6 +78,7 @@
         <footer>
           <span>&copy;Febrero 2019</span>
         </footer>
+        <div style="overflow:hidden"> </div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
