@@ -1,9 +1,19 @@
-h1 {
-  
-    left: 0;
-    top: 0;
+body {
+    overflow-x: hidden;
+    background: #D9E2E7;
+    line-height: 1.5;
+}
+
+.aboutDescription {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.welcomeTitle {
     width: 100%;
-    padding:3%;
+    margin-top: 0;
+    margin-bottom: 0%;
+    padding: 3%;
     font-family: monospace;
     font-size: xx-large;
     color: white;
@@ -11,79 +21,78 @@ h1 {
     background: #1E3747;
     text-align: center;
     text-shadow: 4px 4px 6px black;
-  }
+}
 
-  nav{
+nav {
     position: relative;
     width: 100%;
     background-color: black;
     display: flex;
     justify-content: space-around;
-  }
-  
-.buttonNav{
+}
+
+.buttonNav {
     text-decoration: none;
     display: inline-block;
     font-family: monospace;
-    color:white;
+    color: white;
     font-size: 1rem;
     background-color: black;
     border-color: black;
-    box-shadow: none ;
-  }
-
-body{
-  overflow-x: hidden;
-  background:  #D9E2E7;
+    box-shadow: none;
 }
 
-div{
-padding-top: 5%;
-text-align: center;
-font-size: 1.5rem;
-padding-bottom: 80px;
+.center {
+    padding-top: 5%;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
-footer{
+footer {
     background: #304F63;
     padding: 1%;
     font-family: sans-serif;
     font-size: .7rem;
     text-align: center;
     width: 100%;
-    position:fixed;
-    bottom:0px;
-    
-  }
-  button{
+    position: fixed;
+    bottom: 0px;
+}
+
+button {
     text-decoration: none;
     padding: .5rem;
     font-size: 1rem;
     color: #ffffff;
-    background-color:#0F1C65;
+    background-color: #0F1C65;
     border-radius: 12px;
-    border: 2px solid #1E3747 ;
+    border: 2px solid #1E3747;
     opacity: 0.6;
     transition: 0.3s;
     cursor: pointer;
     box-shadow: 10px 10px 25px dimgray;
-  }
-
-  button:hover{
-    opacity: unset;
-  }
-
-table {
-  border-style: solid;
-  width: auto;
-  margin: 0 auto;
-  width: 100%; 
-  height: 100%;
-
 }
 
-tr 
-{
-  text-align: center;
-   border-style: solid;
+button:hover {
+    opacity: unset;
+}
+
+.table {
+    border-style: solid;
+    width: 80%;
+    margin-bottom: 10rem;
+    margin-left: 10%;
+}
+
+th {
+    font-size: 1.5rem;
+}
+
+tr {
+    text-align: center;
+    border-style: solid;
+}
+
+.contactForm {
+    align-self: center;
 }
