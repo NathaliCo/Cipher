@@ -43,6 +43,7 @@ nav {
 }
 
 .center {
+    display: block;
     padding-top: 5%;
     text-align: center;
     font-size: 1.5rem;
@@ -71,6 +72,7 @@ button {
     transition: 0.3s;
     cursor: pointer;
     box-shadow: 10px 10px 25px dimgray;
+    margin-bottom: 2rem;
 }
 
 button:hover {
@@ -95,4 +97,16 @@ tr {
 
 .contactForm {
     align-self: center;
+}
+
+input,
+label {
+    display: block;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section {
+    margin-bottom: 5rem;
 }
